@@ -9,6 +9,9 @@
   "scripts": {
     "test": "tape test/*.js"
   },
+  "engines" : {
+    "node" : ">7.7.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bredele/stream-then.git"
