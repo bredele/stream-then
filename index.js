@@ -1,9 +1,22 @@
+/**
+ * Dependencies
+ */
 
+const concat = require('concat-stream')
 
 /**
  *
  */
- 
-module.exports = function(stream, objectMode) {
 
+module.exports = function(stream, bufferMode) {
+  const values = []
+  const reasons = []
+  stream.pipe(concat(data => {
+    values.map(value => value(data.toString()))
+  }))
+  stream.then = function(resolved, rejected) {
+    if(resolved) values.push(resolved)
+    if(rejected) reasons.push(rejected)
+  }
+  return stream
 }

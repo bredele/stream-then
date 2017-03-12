@@ -28,5 +28,8 @@
   "homepage": "https://github.com/bredele/stream-then#readme",
   "devDependencies": {
     "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "concat-stream": "^1.6.0"
   }
 }
