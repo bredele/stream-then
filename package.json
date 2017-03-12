@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/bredele/stream-then/issues"
   },
-  "homepage": "https://github.com/bredele/stream-then#readme"
+  "homepage": "https://github.com/bredele/stream-then#readme",
+  "devDependencies": {
+    "tape": "^4.6.3"
+  }
 }
