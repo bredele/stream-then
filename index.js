@@ -15,7 +15,7 @@ module.exports = function(stream, bufferMode) {
     reasons.map(reason => reason(error))
   })
   stream.pipe(concat(data => {
-    values.map(value => value(data.toString()))
+    values.map(value => value(bufferMode ? data : data.toString()))
   }))
   stream.then = function(resolved, rejected) {
     if(resolved) values.push(resolved)

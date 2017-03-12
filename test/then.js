@@ -15,6 +15,16 @@ test('should resolve stream as promise', assert => {
   concat()
 })
 
+test('should resolve stream as promise and pass buffer', assert => {
+  assert.plan(2)
+  async function concat() {
+    const result = await thenable(hello(), true)
+    assert.equal(Buffer.isBuffer(result), true)
+    assert.equal(result.toString(), 'hello')
+  }
+  concat()
+})
+
 test('should reject stream as promise', assert => {
   assert.plan(1)
   async function concat() {
