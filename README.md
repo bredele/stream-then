@@ -10,7 +10,7 @@ Create a thenable object from a readable stream.
 
   * **Concatenate stream buffers**: Collect and concatenate all of the buffers emitted by a readable stream. The stream is then resolved (or rejected) with a single buffer once ended.
   * **Async**: Perfect with asynchronous function using **async/await**.  
-  * **Buffer mode**: Coerce result into a string by default. Stream-then also supports buffers and other things a stream can emit (see [documentation](/test)).
+  * **Buffer mode**: Coerce result into a string by default. Stream-then also supports buffers and other things a stream can emit (see [documentation](https://github.com/bredele/stream-then/blob/master/test/then.js)).
 
 
 ## Usage
