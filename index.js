@@ -11,6 +11,9 @@ const concat = require('concat-stream')
 module.exports = function(stream, bufferMode) {
   const values = []
   const reasons = []
+  stream.on('error', error => {
+    reasons.map(reason => reason(error))
+  })
   stream.pipe(concat(data => {
     values.map(value => value(data.toString()))
   }))
