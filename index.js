@@ -4,8 +4,20 @@
 
 const concat = require('concat-stream')
 
+
 /**
+ * Create a thenable object from a readable stream.
  *
+ * Examples:
+ *
+ *  thenable(stream).then(value => {
+ *    // do something with value
+ *  })
+ *
+ * @param {Stream} stream
+ * @param {Boolean} bufferMode
+ * @return {Stream} stream
+ * @api public
  */
 
 module.exports = function(stream, bufferMode) {
