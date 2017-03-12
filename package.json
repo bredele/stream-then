@@ -1,0 +1,29 @@
+{
+  "name": "stream-then",
+  "version": "1.0.0",
+  "description": "Make streams thenable",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bredele/stream-then.git"
+  },
+  "keywords": [
+    "stream",
+    "then",
+    "promise",
+    "await",
+    "async"
+  ],
+  "author": "Olvier <olivier.wietrich@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bredele/stream-then/issues"
+  },
+  "homepage": "https://github.com/bredele/stream-then#readme"
+}
