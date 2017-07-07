@@ -21,6 +21,7 @@ const concat = require('concat-stream')
  */
 
 module.exports = function(stream, bufferMode) {
+  if (typeof stream.then === 'function') return stream
   const values = []
   const reasons = []
   stream.on('error', error => {

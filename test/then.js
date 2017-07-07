@@ -6,6 +6,7 @@ const test = require('tape')
 const Readable = require('stream').Readable
 const thenable = require('..')
 
+
 test('should resolve stream as promise', assert => {
   assert.plan(1)
   async function concat() {
@@ -14,6 +15,7 @@ test('should resolve stream as promise', assert => {
   }
   concat()
 })
+
 
 test('should resolve stream as promise and pass buffer', assert => {
   assert.plan(2)
@@ -24,6 +26,7 @@ test('should resolve stream as promise and pass buffer', assert => {
   }
   concat()
 })
+
 
 test('should reject stream as promise', assert => {
   assert.plan(1)
@@ -37,6 +40,18 @@ test('should reject stream as promise', assert => {
   concat()
 })
 
+
+test('should do nothing if a promise is passed and return it', assert => {
+  assert.plan(2)
+  const promise = new Promise(resolve => {
+    setTimeout(() => resolve('hello'), 500)
+  })
+  const result = thenable(promise)
+  assert.equal(promise, result)
+  result.then(data => {
+    assert.equal(data, 'hello')
+  })
+})
 
 
 /**
