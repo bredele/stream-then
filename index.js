@@ -22,17 +22,11 @@ const concat = require('concat-stream')
 
 module.exports = function(stream, bufferMode) {
   if (typeof stream.then === 'function') return stream
-  const values = []
-  const reasons = []
-  stream.on('error', error => {
-    reasons.map(reason => reason(error))
+  return new Promise(function(resolve, reject) {
+    stream.on('error', reject)
+    stream.pipe(concat(data => {
+      resolve(bufferMode ? data : data.toString())
+    }))
   })
-  stream.pipe(concat(data => {
-    values.map(value => value(bufferMode ? data : data.toString()))
-  }))
-  stream.then = function(resolved, rejected) {
-    if(resolved) values.push(resolved)
-    if(rejected) reasons.push(rejected)
-  }
-  return stream
+
 }
